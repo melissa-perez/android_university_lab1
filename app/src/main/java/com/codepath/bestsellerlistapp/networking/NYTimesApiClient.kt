@@ -20,7 +20,7 @@ import retrofit2.converter.gson.GsonConverterFactory
  * after copy and paste the API key under your Account -> Apps -> <Your App> -> API Keys
 </Your> */
 // TODO: Replace the below API key with your own generated key
-private const val API_KEY = "<YOUR-API-KEY-GOES-HERE>"
+private const val API_KEY = "yvO1dNjuRXxN2nph6S0Uw6JLWToXaVBn"
 class NYTimesApiClient {
     private val nyTimesService: NYTimesService
 
