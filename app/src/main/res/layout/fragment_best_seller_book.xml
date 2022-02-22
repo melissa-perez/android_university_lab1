@@ -1,47 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="6dp"
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/ranking"
-        android:text="1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?attr/textAppearanceListItem" />
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:fontFamily="serif"
+        android:textSize="22sp"
+        tools:text="1"/>
 
     <ImageView
         android:id="@+id/book_image"
-        android:src="@mipmap/not_found_foreground"
+        app:layout_constraintTop_toTopOf="@id/ranking"
+        app:layout_constraintStart_toEndOf="@id/ranking"
+        android:layout_marginStart="20dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?attr/textAppearanceListItem" />
+        android:layout_height="100dp"
+        tools:src="@drawable/not_found_background" />
 
     <TextView
         android:id="@+id/book_title"
+        app:layout_constraintTop_toBottomOf="@id/book_image"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?attr/textAppearanceListItem" />
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textStyle="bold"
+        tools:text="book title here" />
 
     <TextView
         android:id="@+id/book_author"
+        app:layout_constraintTop_toBottomOf="@id/book_title"
+        app:layout_constraintStart_toStartOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?attr/textAppearanceListItem" />
+        android:textAppearance="?attr/textAppearanceListItem"
+        tools:text="book author here"  />
 
     <TextView
         android:id="@+id/book_description"
-        android:text="This book is all about...."
+        app:layout_constraintTop_toBottomOf="@id/book_author"
+        app:layout_constraintStart_toStartOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?attr/textAppearanceListItem" />
+        android:ellipsize="end"
+        android:fontFamily="sans-serif-light"
+        android:maxLines="5"
+        android:textAppearance="?attr/textAppearanceListItem"
+        tools:text="long book description here" />
 
     <Button
         android:id="@+id/buy_button"
-        android:text="BUY ON AMAZON"
+        app:layout_constraintTop_toBottomOf="@id/book_description"
+        app:layout_constraintStart_toStartOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?attr/textAppearanceListItem" />
+        android:backgroundTint="#567b95"
+        android:text="@string/buy_book"
+        android:textColor="@android:color/white" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
